@@ -100,6 +100,11 @@ function! DWM_AutoEnter()
     return
   endif
 
+  " Skip deol windows in floating.
+  if exists('t:deol') && t:deol.options.split ==# 'floating'
+    return
+  endif
+
   " Skip buffers without filetype
   if !len(&l:filetype)
     return
