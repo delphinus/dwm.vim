@@ -231,6 +231,6 @@ endif
 if has('autocmd')
   augroup dwm
     au!
-    au BufWinEnter * if (&l:buflisted || &l:filetype == 'help') && &l:filetype != 'denite' && !&l:previewwindow | call DWM_AutoEnter() | endif
+    au BufWinEnter * if (&l:buflisted || &l:filetype == 'help') && &l:filetype != 'denite' &l:filetype != 'denite-filter' && !&l:previewwindow | call DWM_AutoEnter() | endif
   augroup end
 endif
